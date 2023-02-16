@@ -5,7 +5,6 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
 	[SerializeField] private GameEvent _onUpdateScore;
-
 	[SerializeField] private int _scoreToAdd = 100;
 
 	private void OnTriggerEnter(Collider other)
@@ -13,7 +12,7 @@ public class PickUp : MonoBehaviour
 		if (other.CompareTag("Player"))
 		{
 			ScoreKeeper.AddIntToScore(this._scoreToAdd);
-			this._onUpdateScore.Invoke();
+			this._onUpdateScore.Invoke(this, this._scoreToAdd);
 			gameObject.SetActive(false);			
 		}
 	}

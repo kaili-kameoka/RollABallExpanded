@@ -7,11 +7,11 @@ internal class GameEvent : ScriptableObject
 {
 	private HashSet<GameEventListener> _listeners = new HashSet<GameEventListener>();
 
-	public void Invoke ()
+	public void Invoke (Component sender, object data)
 	{
 		foreach (GameEventListener listener in this._listeners)
 		{
-			listener.RaiseEvent();
+			listener.RaiseEvent(sender, data);
 		}
 	}
 

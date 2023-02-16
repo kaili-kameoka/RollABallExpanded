@@ -20,4 +20,9 @@ public class PlayerMovementController : MonoBehaviour
 		Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
 		this._rigidbody.AddForce(movement * this._forceToAdd);
 	}
+
+	public void StopMovement()
+	{
+		this._rigidbody.velocity = Vector3.zero;
+	}
 }

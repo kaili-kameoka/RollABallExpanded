@@ -15,7 +15,7 @@ public class PlayerScaler : MonoBehaviour
 
 	public void UpdateScale()
     {
-        int scaleToAdd = ScoreKeeper.GetScore() / 100;
+        float scaleToAdd = ScoreKeeper.GetScore() / 100f;
         Vector3 newScale = transform.localScale;
         newScale.x += scaleToAdd;
         newScale.y += scaleToAdd;

@@ -16,11 +16,12 @@ public class PlayerFollower : MonoBehaviour
 
 	private void Update()
 	{
-		float newPlayerTransformX = this._playerTransform.position.x + this._positionOffset.x;
-		float newPlayerTransformY = this._playerTransform.position.y + this._positionOffset.y;
-		float newPlayerTransformZ = this._playerTransform.position.z + this._positionOffset.z;
+		Vector3 newPosition = this._playerTransform.position;
+		newPosition.x += this._positionOffset.x;
+		newPosition.y += this._positionOffset.y + this._playerTransform.localScale.y;
+		newPosition.z += this._positionOffset.z - this._playerTransform.localScale.z;
 
-		transform.position = new Vector3(newPlayerTransformX, newPlayerTransformY, newPlayerTransformZ);
+		transform.position = newPosition;
 		
 	}
 }
