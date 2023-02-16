@@ -19,6 +19,6 @@ public class LevelFinisher : MonoBehaviour
 
 	private bool IsLevelFinished()
 	{
-		return ScoreKeeper.GetScore() > this._targetScore;
+		return ScoreKeeper.GetScore() == this._targetScore;
 	}
 }

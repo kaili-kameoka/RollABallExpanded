@@ -8,13 +8,7 @@ public class LevelSwitcher : MonoBehaviour
 
     public string _nextScene;
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.CompareTag("Player"))
-		{
-			
-		}
-	}
+	
 
 
 	public void SwitchLevel()
